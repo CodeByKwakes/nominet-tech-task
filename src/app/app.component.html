@@ -18,12 +18,33 @@
   <!-- Add Nameserver Component -->
   <ntt-add-name-server (formSubmit)="onAddNameserver($event)" />
   <!-- Display Success or Error Message -->
-  <div *ngIf="successMsg$ | async" class="alert alert-success" role="alert">
+  <div
+    *ngIf="successMsg$ | async"
+    class="alert alert-success alert-dismissible"
+    role="alert"
+  >
     {{ successMsg$ | async }}
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="alert"
+      aria-label="Close"
+      (click)="onResetMessage()"
+    ></button>
   </div>
 
-
-  <div *ngIf="errorMsg$ | async" class="alert alert-danger" role="alert">
+  <div
+    *ngIf="errorMsg$ | async"
+    class="alert alert-danger alert-dismissible"
+    role="alert"
+  >
     {{ errorMsg$ | async }}
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="alert"
+      aria-label="Close"
+      (click)="onResetMessage()"
+    ></button>
   </div>
 </div>

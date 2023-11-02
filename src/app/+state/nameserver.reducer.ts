@@ -50,6 +50,11 @@ export const reducer = createReducer(
     loading: false,
     successMsg: '',
     error,
+  })),
+  on(NameserverActions.resetMessage, (state) => ({
+    ...state,
+    successMsg: '',
+    error: null,
   }))
 );
 

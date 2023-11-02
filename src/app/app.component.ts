@@ -40,4 +40,8 @@ export class AppComponent {
       );
     });
   }
+
+  onResetMessage() {
+    this.#store.dispatch(NameserverActions.resetMessage());
+  }
 }
