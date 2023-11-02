@@ -12,7 +12,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "nominetTechTask",
+            "prefix": "ntt",
             "style": "camelCase"
           }
         ],
@@ -20,7 +20,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "nominet-tech-task",
+            "prefix": "ntt",
             "style": "kebab-case"
           }
         ]

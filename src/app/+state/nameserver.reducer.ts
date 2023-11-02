@@ -43,10 +43,12 @@ export const reducer = createReducer(
     nameservers: [...state.nameservers, nameserver],
     loading: false,
     successMsg: 'Nameserver added successfully',
+    error: null
   })),
   on(NameserverActions.addNameserverFailure, (state, { error }) => ({
     ...state,
     loading: false,
+    successMsg: '',
     error,
   }))
 );

@@ -1,0 +1,21 @@
+<div>
+  <h2>Nameservers</h2>
+  <p>
+    From here you can add and remove nameservers for this domain. When you have
+    finished click Save.
+  </p>
+
+  <pre>{{ nameservers$ | async | json }}</pre>
+
+  <!-- Display domain information -->
+
+  <!-- Add Nameserver Component -->
+  <ntt-add-name-server (formSubmit)="onAddNameserver($event)" />
+  <!-- Display Success or Error Message -->
+  <div *ngIf="successMsg$ | async" class="success-message">
+    {{ successMsg$ | async }}
+  </div>
+  <div *ngIf="errorMsg$ | async" class="error-message">
+    {{ errorMsg$ | async }}
+  </div>
+</div>

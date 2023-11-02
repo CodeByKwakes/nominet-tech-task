@@ -42,11 +42,15 @@ export class NameserverEffects {
       ofType(NameserverActions.addNameserver),
       withLatestFrom(this.#store.select(selectNameservers)), // Get current
       mergeMap(([{ nameserver }, nameservers]) => {
+
         const isUnique = !nameservers.some(
           (existingNS) =>
             existingNS.name === nameserver.name ||
             existingNS.ipAddress === nameserver.ipAddress
         );
+
+        console.log('isUnique', isUnique);
+
         if (isUnique) {
           return this.#apiService.addNameserver(nameserver).pipe(
             map((response: Nameserver) =>
