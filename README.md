@@ -16,7 +16,7 @@ To install Nominet Tech Task Source, follow these steps:
 1. Clone the repository:
 
 ```sh
-git clone <repository_url>
+git clone https://github.com/CodeByKwakes/nominet-tech-task.git
 ```
 
 2. Navigate to the project directory:
