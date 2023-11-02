@@ -1,24 +1,27 @@
-<table
-  *ngIf="nameservers?.length; else empty"
-  class="table table-hover">
+<table class="table table-hover">
   <thead>
     <tr>
       <th scope="col">Host Name</th>
       <th scope="col">IP Address</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let item of nameservers">
-      <td>{{ item.name }}</td>
-      <td>{{ item.ipAddress }}</td>
-    </tr>
+    <ng-container *ngIf="nameservers?.length; else empty">
+      <tr *ngFor="let item of nameservers">
+        <td>{{ item.name }}</td>
+        <td>{{ item.ipAddress }}</td>
+        <td></td>
+      </tr>
+    </ng-container>
+    <ng-template #empty>
+      <tr>
+        <td
+          class="text-center"
+          colspan="3">
+          No nameservers found
+        </td>
+      </tr>
+    </ng-template>
   </tbody>
 </table>
-
-<ng-template #empty>
-  <div
-    class="alert alert-info"
-    role="alert">
-    No nameservers found
-  </div>
-</ng-template>

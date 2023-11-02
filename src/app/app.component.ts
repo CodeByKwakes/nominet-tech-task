@@ -7,10 +7,19 @@ import {
   NameserverActions
 } from './+state';
 import { CommonModule } from '@angular/common';
-import { AddNameServerComponent, DisplayTableComponent } from './ui';
+import {
+  AddNameServerComponent,
+  DisplayTableComponent,
+  HeaderComponent
+} from './ui';
 @Component({
   standalone: true,
-  imports: [CommonModule, AddNameServerComponent, DisplayTableComponent],
+  imports: [
+    CommonModule,
+    AddNameServerComponent,
+    DisplayTableComponent,
+    HeaderComponent
+  ],
   selector: 'ntt-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']

@@ -1,26 +1,10 @@
 <div class="container">
-  <h2>Nameservers</h2>
-  <p>
-    From here you can add and remove nameservers for this domain. When you have
-    finished click Save.
-  </p>
+  <ntt-header />
 
-  <!-- Display domain information -->
-  <ntt-display-table [nameservers]="nameservers$ | async" />
-
-  <h3>Add Nameservers</h3>
-  <p>
-    Add single or multiple nameservers here. Please add each entry on a separate
-    line. For .uk domains, you can have a maximum of 10 nameserver records per
-    domain.
-  </p>
-
-  <!-- Add Nameserver Component -->
-  <ntt-add-name-server (formSubmit)="onAddNameserver($event)" />
   <!-- Display Success or Error Message -->
   <div
     *ngIf="successMsg$ | async"
-    class="alert alert-success alert-dismissible"
+    class="alert alert-success alert-dismissible fade show"
     role="alert">
     {{ successMsg$ | async }}
     <button
@@ -33,7 +17,7 @@
 
   <div
     *ngIf="errorMsg$ | async"
-    class="alert alert-danger alert-dismissible"
+    class="alert alert-danger alert-dismissible fade show"
     role="alert">
     {{ errorMsg$ | async }}
     <button
@@ -42,5 +26,32 @@
       data-bs-dismiss="alert"
       aria-label="Close"
       (click)="onResetMessage()"></button>
+  </div>
+
+  <div class="row mt-4">
+    <div class="card p-3">
+      <h3 class="text-primary mb-3">Nameservers</h3>
+      <p>
+        From here you can add and remove nameservers of this domain. When you
+        have finished click Save.
+      </p>
+      <p>
+        Note: you cannot edit any of the details of a nameserver here, this must
+        be done using Nameserver edit
+      </p>
+
+      <!-- Display domain information -->
+      <ntt-display-table [nameservers]="nameservers$ | async" />
+
+      <h3 class="text-primary mb-3">Add Nameservers</h3>
+      <p>
+        Add single or multiple nameservers here. Please add each entry on a
+        separate line. For .uk domains, you can have a maximum of 10 nameserver
+        records per domain.
+      </p>
+
+      <!-- Add Nameserver Component -->
+      <ntt-add-name-server (formSubmit)="onAddNameserver($event)" />
+    </div>
   </div>
 </div>
