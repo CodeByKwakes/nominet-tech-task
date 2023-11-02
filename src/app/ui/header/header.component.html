@@ -18,7 +18,7 @@
         </li>
       </ol>
     </nav>
-    <h2 class="mb-3 blue-text">Editing example.uk</h2>
+    <h2 class="mb-3 blue-text">Editing {{ info?.domain }}</h2>
     <ul class="list-inline">
       <li class="list-inline-item">Jump to:</li>
       <li class="list-inline-item"><a href="#">Contacts</a></li>
@@ -36,7 +36,7 @@
       </li>
       <li class="list-inline-item">
         Register <br />
-        Test Registrar
+        {{ info?.registrar }}
       </li>
     </ul>
   </div>

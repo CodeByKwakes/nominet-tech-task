@@ -1,5 +1,5 @@
 <div class="container">
-  <ntt-header />
+  <ntt-header [info]="domainInfo$ | async" />
 
   <!-- Display Success or Error Message -->
   <div

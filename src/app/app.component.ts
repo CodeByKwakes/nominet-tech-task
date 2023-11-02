@@ -12,6 +12,7 @@ import {
   DisplayTableComponent,
   HeaderComponent
 } from './ui';
+import { ApiService } from './services';
 @Component({
   standalone: true,
   imports: [
@@ -26,6 +27,9 @@ import {
 })
 export class AppComponent {
   readonly #store = inject(Store);
+  readonly #apiService = inject(ApiService);
+
+  readonly domainInfo$ = this.#apiService.getInfo();
   readonly nameservers$ = this.#store.select(selectNameservers);
   readonly successMsg$ = this.#store.select(selectSuccessMsg);
   readonly errorMsg$ = this.#store.select(selectError);

@@ -20,4 +20,10 @@ export class ApiService {
       nameserver
     );
   }
+
+  getInfo(): Observable<{ domain: string; registrar: string }> {
+    return this.#http.get<{ domain: string; registrar: string }>(
+      `${this.#apiUrl}/info`
+    );
+  }
 }
