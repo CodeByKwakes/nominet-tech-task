@@ -20,7 +20,7 @@ export class NameserverEffects {
         return this.#apiService.getAllNameservers().pipe(
           map((nameservers: Nameserver[]) => {
             return NameserverActions.loadNameserversSuccess({
-              nameservers,
+              nameservers
             });
           }),
           catchError((error) => {
@@ -54,7 +54,7 @@ export class NameserverEffects {
         } else {
           return of(
             NameserverActions.addNameserverFailure({
-              error: 'Nameserver already exists',
+              error: 'Nameserver already exists'
             })
           );
         }

@@ -3,7 +3,7 @@ import {
   Component,
   EventEmitter,
   Output,
-  inject,
+  inject
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
@@ -14,14 +14,14 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
   imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './add-name-server.component.html',
   styleUrls: ['./add-name-server.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AddNameServerComponent {
   @Output() formSubmit: EventEmitter<string[]> = new EventEmitter<string[]>();
 
   #formBuilder = inject(FormBuilder);
   form = this.#formBuilder.group({
-    nameservers: ['', Validators.required],
+    nameservers: ['', Validators.required]
   });
 
   submitForm() {

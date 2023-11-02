@@ -10,10 +10,7 @@ describe('NameserverEffects', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [
-        NameserverEffects,
-        provideMockActions(() => actions$)
-      ]
+      providers: [NameserverEffects, provideMockActions(() => actions$)]
     });
 
     effects = TestBed.inject(NameserverEffects);

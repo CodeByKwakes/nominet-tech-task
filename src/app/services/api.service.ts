@@ -4,7 +4,7 @@ import { Nameserver } from '../models';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class ApiService {
   readonly #apiUrl = 'http://localhost:3000';

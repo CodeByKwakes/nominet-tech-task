@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import {
   HttpClientTestingModule,
-  HttpTestingController,
+  HttpTestingController
 } from '@angular/common/http/testing';
 
 import { ApiService } from './api.service';
@@ -12,7 +12,7 @@ describe('ApiService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
+      imports: [HttpClientTestingModule]
     });
     service = TestBed.inject(ApiService);
     httpMock = TestBed.inject(HttpTestingController);
@@ -32,7 +32,7 @@ describe('ApiService', () => {
         expect(res.length).toBe(2);
         expect(res).toEqual([
           { name: 'ns1', ipAddress: '1.1.1.1' },
-          { name: 'ns2', ipAddress: '2.2.2.2' },
+          { name: 'ns2', ipAddress: '2.2.2.2' }
         ]);
       });
 
@@ -40,7 +40,7 @@ describe('ApiService', () => {
       expect(req.request.method).toBe('GET');
       req.flush([
         { name: 'ns1', ipAddress: '1.1.1.1' },
-        { name: 'ns2', ipAddress: '2.2.2.2' },
+        { name: 'ns2', ipAddress: '2.2.2.2' }
       ]);
     });
   });
@@ -49,7 +49,7 @@ describe('ApiService', () => {
     it('should make expected POST request', () => {
       const nameserver = {
         name: 'ns3',
-        ipAddress: '3.3.3.3',
+        ipAddress: '3.3.3.3'
       };
 
       service.addNameserver(nameserver).subscribe();

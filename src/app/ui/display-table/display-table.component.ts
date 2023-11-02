@@ -8,7 +8,7 @@ import { Nameserver } from '../../models';
   imports: [CommonModule],
   templateUrl: './display-table.component.html',
   styleUrls: ['./display-table.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DisplayTableComponent {
   @Input() nameservers: Nameserver[] | null = [];

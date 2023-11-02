@@ -14,11 +14,13 @@ Before you begin, ensure you have met the following requirements:
 To install Nominet Tech Task Source, follow these steps:
 
 1. Clone the repository:
+
 ```sh
 git clone <repository_url>
 ```
 
 2. Navigate to the project directory:
+
 ```sh
 cd nominet-tech-task
 ```
@@ -29,7 +31,8 @@ cd nominet-tech-task
 npm install
 ```
 
-## Using Nominet Tech Task 
+## Using Nominet Tech Task
+
 To start the JSON server API, run the following command:
 
 ```sh

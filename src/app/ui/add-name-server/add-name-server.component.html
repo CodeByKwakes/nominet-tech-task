@@ -1,11 +1,15 @@
-<form [formGroup]="form" (ngSubmit)="submitForm()">
+<form
+  [formGroup]="form"
+  (ngSubmit)="submitForm()">
   <textarea
-   class="form-control"
+    class="form-control"
     formControlName="nameservers"
     placeholder="Enter nameservers (one per line)"
-    rows="10"
-  ></textarea>
-  <button class="btn btn-primary my-3" type="submit" [disabled]="form.invalid">
+    rows="10"></textarea>
+  <button
+    class="btn btn-primary my-3"
+    type="submit"
+    [disabled]="form.invalid">
     Add Nameservers
   </button>
 </form>

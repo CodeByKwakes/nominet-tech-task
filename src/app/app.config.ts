@@ -12,7 +12,7 @@ export const appConfig: ApplicationConfig = {
     provideState(nameserverFeature),
     provideEffects(NameserverEffects),
     provideStoreDevtools({
-      name: 'nominet-tech-task',
-    }),
-  ],
+      name: 'nominet-tech-task'
+    })
+  ]
 };

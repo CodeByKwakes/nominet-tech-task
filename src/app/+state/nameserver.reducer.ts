@@ -15,28 +15,28 @@ export const initialState: State = {
   nameservers: [],
   loading: false,
   successMsg: '',
-  error: null,
+  error: null
 };
 
 export const reducer = createReducer(
   initialState,
   on(NameserverActions.loadNameservers, (state) => ({
     ...state,
-    loading: true,
+    loading: true
   })),
   on(NameserverActions.loadNameserversSuccess, (state, { nameservers }) => ({
     ...state,
-    nameservers,
+    nameservers
   })),
   on(NameserverActions.loadNameserversFailure, (state, { error }) => ({
     ...state,
     isLoading: false,
-    error,
+    error
   })),
 
   on(NameserverActions.addNameserver, (state) => ({
     ...state,
-    loading: true,
+    loading: true
   })),
   on(NameserverActions.addNameserverSuccess, (state, { nameserver }) => ({
     ...state,
@@ -49,18 +49,18 @@ export const reducer = createReducer(
     ...state,
     loading: false,
     successMsg: '',
-    error,
+    error
   })),
   on(NameserverActions.resetMessage, (state) => ({
     ...state,
     successMsg: '',
-    error: null,
+    error: null
   }))
 );
 
 export const nameserverFeature = createFeature({
   name: nameserverFeatureKey,
-  reducer,
+  reducer
 });
 
 export const { selectNameservers, selectSuccessMsg, selectError } =

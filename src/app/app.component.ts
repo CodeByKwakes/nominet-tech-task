@@ -4,7 +4,7 @@ import {
   selectError,
   selectNameservers,
   selectSuccessMsg,
-  NameserverActions,
+  NameserverActions
 } from './+state';
 import { CommonModule } from '@angular/common';
 import { AddNameServerComponent, DisplayTableComponent } from './ui';
@@ -13,7 +13,7 @@ import { AddNameServerComponent, DisplayTableComponent } from './ui';
   imports: [CommonModule, AddNameServerComponent, DisplayTableComponent],
   selector: 'ntt-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   readonly #store = inject(Store);

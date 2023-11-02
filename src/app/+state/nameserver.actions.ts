@@ -10,6 +10,6 @@ export const NameserverActions = createActionGroup({
     'Add Nameserver': props<{ nameserver: Nameserver }>(),
     'Add Nameserver Success': props<{ nameserver: Nameserver }>(),
     'Add Nameserver Failure': props<{ error: string | null }>(),
-    'Reset Message': emptyProps(),
-  },
+    'Reset Message': emptyProps()
+  }
 });

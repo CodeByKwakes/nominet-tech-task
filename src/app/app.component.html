@@ -21,30 +21,26 @@
   <div
     *ngIf="successMsg$ | async"
     class="alert alert-success alert-dismissible"
-    role="alert"
-  >
+    role="alert">
     {{ successMsg$ | async }}
     <button
       type="button"
       class="btn-close"
       data-bs-dismiss="alert"
       aria-label="Close"
-      (click)="onResetMessage()"
-    ></button>
+      (click)="onResetMessage()"></button>
   </div>
 
   <div
     *ngIf="errorMsg$ | async"
     class="alert alert-danger alert-dismissible"
-    role="alert"
-  >
+    role="alert">
     {{ errorMsg$ | async }}
     <button
       type="button"
       class="btn-close"
       data-bs-dismiss="alert"
       aria-label="Close"
-      (click)="onResetMessage()"
-    ></button>
+      (click)="onResetMessage()"></button>
   </div>
 </div>
