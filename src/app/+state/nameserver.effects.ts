@@ -1,13 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { of } from 'rxjs';
-import {
-  catchError,
-  filter,
-  map,
-  mergeMap,
-  withLatestFrom,
-} from 'rxjs/operators';
+import { catchError, map, mergeMap, withLatestFrom } from 'rxjs/operators';
 import { Nameserver } from '../models';
 import { ApiService } from '../services';
 import { NameserverActions } from './nameserver.actions';
@@ -40,16 +34,13 @@ export class NameserverEffects {
   addNameservers$ = createEffect(() =>
     this.actions$.pipe(
       ofType(NameserverActions.addNameserver),
-      withLatestFrom(this.#store.select(selectNameservers)), // Get current
+      withLatestFrom(this.#store.select(selectNameservers)),
       mergeMap(([{ nameserver }, nameservers]) => {
-
         const isUnique = !nameservers.some(
           (existingNS) =>
             existingNS.name === nameserver.name ||
             existingNS.ipAddress === nameserver.ipAddress
         );
-
-        console.log('isUnique', isUnique);
 
         if (isUnique) {
           return this.#apiService.addNameserver(nameserver).pipe(

@@ -5,9 +5,15 @@
     finished click Save.
   </p>
 
-  <pre>{{ nameservers$ | async | json }}</pre>
-
   <!-- Display domain information -->
+  <ntt-display-table [nameservers]="nameservers$ | async" />
+
+  <h3>Add Nameservers</h3>
+  <p>
+    Add single or multiple nameservers here. Please add each entry on a separate
+    line. For .uk domains, you can have a maximum of 10 nameserver records per
+    domain.
+  </p>
 
   <!-- Add Nameserver Component -->
   <ntt-add-name-server (formSubmit)="onAddNameserver($event)" />
