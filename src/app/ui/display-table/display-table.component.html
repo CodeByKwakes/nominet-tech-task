@@ -1,8 +1,8 @@
-<table *ngIf="nameservers?.length; else empty">
+<table *ngIf="nameservers?.length; else empty" class="table table-hover">
   <thead>
     <tr>
-      <th>Host Name</th>
-      <th>IP Address</th>
+      <th scope="col">Host Name</th>
+      <th scope="col">IP Address</th>
     </tr>
   </thead>
   <tbody>
@@ -14,5 +14,5 @@
 </table>
 
 <ng-template #empty>
-  <p>No nameservers found</p>
+  <div class="alert alert-info" role="alert">No nameservers found</div>
 </ng-template>

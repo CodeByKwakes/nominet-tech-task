@@ -1,4 +1,4 @@
-<div>
+<div class="container">
   <h2>Nameservers</h2>
   <p>
     From here you can add and remove nameservers for this domain. When you have
@@ -18,10 +18,12 @@
   <!-- Add Nameserver Component -->
   <ntt-add-name-server (formSubmit)="onAddNameserver($event)" />
   <!-- Display Success or Error Message -->
-  <div *ngIf="successMsg$ | async" class="success-message">
+  <div *ngIf="successMsg$ | async" class="alert alert-success" role="alert">
     {{ successMsg$ | async }}
   </div>
-  <div *ngIf="errorMsg$ | async" class="error-message">
+
+
+  <div *ngIf="errorMsg$ | async" class="alert alert-danger" role="alert">
     {{ errorMsg$ | async }}
   </div>
 </div>
